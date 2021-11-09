@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab2: Responsive Webpage about ArcGIS</title>
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav" >
+        <a href="index.html">Abstract</a>
+        <a href="general_intro.html">General Introduction</a>
+        <a href="included_features.html">What features are included in ArcGIS?</a>
+        <a class="active" href="online_tutorial.html">Online Tutorial for ArcGIS</a>
+        <a href="seealso.html">See Also</a>
+        <a href="references.html">References</a>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+    <style>
+        body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+::selection {
+  color: red;
+  background: yellow;
+}
+    </style>
+    
+    <!-- Page content -->
+     <div class="header" id="myHeader">
+        <h2 style="font-style: oblique; font-family:'Times New Roman', 'Times', 'serif'; font-size: 30px;">Online Tutorial</h2>
+     </div>
+
+    <div class="content">
+      <p1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        As one member of the ArcGIS family, ArcGIS online allow users to harness
+     <br>
+     the services via web. You can easily make your own storymaps, creating maps with 
+     <br>
+     a lot of delicate symbols such as symbols of schools, roads,landmarks etc. You can
+     <br>
+     also do some data processing there. 
+     <br>
+     <!--tutorial video -->
+     <iframe width="800" height="550" src="https://www.youtube.com/embed/N-5FCICaMyM?controls=0&amp;start=1"
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+      encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p1>
+    </div>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+    </script>
+</body>
+<body style="background-color:rgb(76, 119, 63);"></body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab2: Responsive Webpage about ArcGIS</title>
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav" >
+        <a href="index.html">Abstract</a>
+        <a href="general_intro.html">General Introduction</a>
+        <a class="active" href="included_features.html">What features are included in ArcGIS?</a>
+        <a href="online_tutorial.html">Online Tutorial for ArcGIS</a>
+        <a href="seealso.html">See Also</a>
+        <a href="references.html">References</a>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .top-container {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+        }
+        
+        .header {
+          padding: 10px 16px;
+          background: #555;
+          color: #f1f1f1;
+        }
+        
+        .content {
+          padding: 16px;
+        }
+        
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        
+        .sticky + .content {
+          padding-top: 102px;
+        }
+        ::selection {
+  color: red;
+  background: yellow;
+}
+        </style>
+
+    <!-- Page content -->
+     <div class="header" id="myHeader">
+        <h2 style="font-style: oblique; font-family: 'Times New Roman', Times, serif; font-size: 30px;">Features and Characteristics</h2>
+      </div>
+    <div class="content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png"
+         style="width: 20%; height: auto;">
+         <style>
+             img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+         </style>
+        <br>
+        <p1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        The included applications and features of ArcGIS.
+        <br> 
+        <li>ArcGIS Online</li>
+        <br>
+        <li>Desktop</li> 
+        <br>
+        <li>Address Locator</li>
+        <br>
+        <li>Other Products: ArcGIS Mobile and ArcPad</li>
+        <br>
+        </p1>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+
+</body>
+<body style="background-color:rgb(76, 119, 63);"></body>
+</html>

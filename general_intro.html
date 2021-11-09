@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab2: Responsive Webpage about ArcGIS</title>
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href ="index.html">Abstract</a>
+        <a class="active" href="general_intro.html">General Introduction</a>
+        <a href="included_features.html">What features are included in ArcGIS</a>
+        <a href="online_tutorial.html">Online Tutorial for ArcGIS</a>
+        <a href="seealso.html">See Also</a>
+        <a href="references.html">References</a>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+    <style>
+        img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+} 
+
+::selection {
+  color: red;
+  background: yellow;
+}
+
+
+    </style>
+    
+
+    <!-- Page content -->
+    
+     <div class="header" id="myHeader">
+       <h2 style="font-style: oblique; font-family: 'Times New Roman', Times, serif; font-size: 30px;">General Introduction</h2>
+     </div>
+     <div class="content">
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png" 
+        style="width: 20%; height: auto;"> 
+        <br>
+        <button onclick="typeWriter()">click to start the text</button>
+        <br>
+
+    <p id="demo"; style= "font-family: 'Times New Roman', Times, serif; font-style:normal; font-weight: bold;"></p>
+    <br>
+    </div>
+    <div class="background_video"></div>
+     <iframe width="800" height="550" src="https://www.youtube.com/embed/lXYFhgntmjg?controls=0" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+      clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+
+        var i = 0;
+        var txt = 'The first version of ArcGIS is released in 1999 as ACR/INFO. It is developed by ESRI, written in C++.\
+        Actually, ArcGIS is a franchise of products including client software, server software, as well as online \
+        GIS services which are maintained by ESRI. To fully experience the use of the product, users might have to\
+        pay for the services provided by ESRI. ';
+        var speed = 50;
+
+        function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("demo").innerHTML += txt.charAt(i);
+         i++;
+         setTimeout(typeWriter, speed);
+  }
+}
+        </script>
+</body>
+<body style="background-color:rgb(76, 119, 63);"></body>
+</html>
